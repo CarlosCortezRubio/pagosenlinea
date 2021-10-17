@@ -8,7 +8,7 @@
    <p>Su pago se ha validado correctamente.</p>
    <p>Felicitaciones por este nuevo logro. Sé que es el primero de muchos más, contamos que tendrás un gran futuro en nuestra universidad. Te deseamos lo mejor de los éxitos.</p>
 
-   {{--@include('partials.email-action-button', ['link'=>$enlace, 'label'=>'Inscripción al Proceso de Admisión'])--}}
+   @include('partials.email-action-button', ['link'=>$enlace, 'label'=>'Visualizar recibo de pago'])
    
  {{-- <p>Utilice las siguientes credenciales de acceso:</p>
   <div>
