@@ -25,6 +25,10 @@ Route::get('/', function () {
    }
 });
 
+//SIMULACIONES
+Route::get('simularPago','SimulacionController@index');
+
+
 // Auth::routes();
 Auth::routes(['register'=>false]);
 

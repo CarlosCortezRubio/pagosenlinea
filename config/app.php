@@ -151,6 +151,8 @@ return [
 
     'captcha_secret' => env('CAPTCHA_SECRET'),
 
+
+    'email_soporte' => env('EMAIL_SOPORTE'),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
