@@ -87,7 +87,7 @@
                      <span style="font-size:6px;">Entidad Recaudadora: </span>
                      <span style="font-size:6px;">PagoEfectivo</span>
                      <br>
-                     <span style="font-size:6px;">C&oacute;digo de Operaci&oacute;n: 80094853</span>
+                     {{--  <span style="font-size:6px;">C&oacute;digo de Operaci&oacute;n: 80094853</span>--}}
                </td>
               
             </tr>
