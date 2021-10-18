@@ -48,7 +48,7 @@
 @endsection
 
 @section('content')
-   {{--  <div>
+     <div>
       <div>
          <table align="left" style="width: 100%">
             
@@ -63,14 +63,14 @@
                         <th colspan="1" width="38px" style="border-bottom: 1px solid black; text-align: right;"><span style="font-size:8px;">Total</span></th>
                      </tr>
                     
-                        <tr style="vertical-align:top;">
+                        {{-- <tr style="vertical-align:top;">
                            <td><span style="font-size:8px;">OTROS</span></td>
                            <td><span style="font-size:8px;">GUITARRA</span></td>
                            <td><span style="font-size:8px;">INSCRIPCION</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">100.00</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">0.00</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">100.00</span></td>
-                        </tr>
+                        </tr>--}}
                     
                      <tr>
                         <td></td>
@@ -96,6 +96,6 @@
             </tr>
          </table>
       </div>
-   </div>--}}
+   </div>
 @endsection
 
