@@ -27,8 +27,8 @@ Route::get('/', function () {
 
 //SIMULACIONES
 Route::get('simularPago','SimulacionController@index');
-Route::get('ReciboSimulado','SimulacionController@enviarReciboIngreso');
-
+Route::get('SimularCorreo','SimulacionController@enviarReciboIngreso');
+Route::get('ReciboSimulado','SimulacionController@simularRecibo');
 // Auth::routes();
 Auth::routes(['register'=>false]);
 
