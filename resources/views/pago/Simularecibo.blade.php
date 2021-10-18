@@ -81,7 +81,7 @@
                      </tr>
                   </table>
                </td>
-            {{--  <tr style="height:5px; line-height:8px;">
+            <tr style="height:5px; line-height:8px;">
                <td colspan="3" style="vertical-align:top; padding-top:15px;">
                      <span style="font-size:6px;">M&eacute;todo de Pago: Dep&oacute;sitos y transferencias</span><br>
                      <span style="font-size:6px;">Entidad Recaudadora: </span>
@@ -89,10 +89,8 @@
                      <br>
                      <span style="font-size:6px;">C&oacute;digo de Operaci&oacute;n: 80094853</span>
                </td>
-               <td style="text-align: right; vertical-align:top;" colspan="2">
-                 
-               </td>
-            </tr>--}}
+              
+            </tr>
          </table>
       </div>
    </div>
