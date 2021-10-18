@@ -66,7 +66,7 @@
                         <tr style="vertical-align:top;">
                            <td><span style="font-size:8px;">OTROS</span></td>
                            <td><span style="font-size:8px;">GUITARRA</span></td>
-                           <td><span style="font-size:8px;">INSCRIPCION</span></td>
+                           <td><span style="font-size:8px;">DERECHO DE INGRESO</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">100.00</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">0.00</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">100.00</span></td>
