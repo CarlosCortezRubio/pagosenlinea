@@ -51,7 +51,7 @@
      <div>
       <div>
          <table align="left" style="width: 100%">
-            
+            <tr>
                <td colspan="5">
                   <table id="detalles" width="100%" cellspacing="0" cellpadding="5" style="border-collapse:separate; border: 1px solid #003872; border-radius: 9px; padding: 5px;">
                      <tr>
@@ -81,6 +81,7 @@
                      </tr>
                   </table>
                </td>
+            </tr>
             <tr style="height:5px; line-height:8px;">
                <td colspan="3" style="vertical-align:top; padding-top:15px;">
                      {{--<span style="font-size:6px;">M&eacute;todo de Pago: Dep&oacute;sitos y transferencias</span><br>--}}
