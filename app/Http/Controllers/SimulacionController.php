@@ -27,8 +27,8 @@ class SimulacionController extends Controller
                             'desc_conc_mov'=>'Derecho de Ingreso',
                             'mail_soli_adm'=>config('app.email_soporte'),
                             'codi_proc_adm'=>'0213215',
-                            'tipo_docu_sol'=>'0132153',
-                            'nume_docu_sol'=>'2354354'
+                            'tipo_docu_sol'=>'01001',
+                            'nume_docu_sol'=>'23543544'
                          ];
              if(hasCartSignOut()){
                 session()->forget(['cartSignOut']);
