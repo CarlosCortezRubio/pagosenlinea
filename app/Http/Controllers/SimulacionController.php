@@ -14,6 +14,16 @@ class SimulacionController extends Controller
        return 'mensaje enviado';
     }
 
+    public function simularRecibo(){
+       
+      $pdf = PDF::loadView('pago.Simularecibo');
+
+      $filename='recibopago.pdf';
+      $pdf->setPaper('a5', 'portrait');
+
+      return $pdf->stream($filename);
+    }
+
     public function index()
     {
              $key = '010001011112545';
