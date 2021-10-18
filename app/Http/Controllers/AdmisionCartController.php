@@ -101,7 +101,7 @@ class AdmisionCartController extends Controller
 		   abort(404, 'Página no encontrada.');
       }
       // VALIDAR PAGO GENERADO O PAGADO
-      $solicitud = Solicitud_Admision::where('codi_proc_adm', getCartSignAttribute('codi_proc_adm'))
+     /* $solicitud = Solicitud_Admision::where('codi_proc_adm', getCartSignAttribute('codi_proc_adm'))
          ->where('tipo_docu_sol', getCartSignAttribute('tipo_docu_sol'))
          ->where('nume_docu_sol', getCartSignAttribute('nume_docu_sol'))
          ->first();
@@ -112,7 +112,7 @@ class AdmisionCartController extends Controller
          } else if($solicitud->esta_pago_sol == 'P'){
             return view('pago.signout.mensaje');
          }
-	   }
+	   }*/
       try{
          $clientAuth = new \GuzzleHttp\Client();
          $serviceId = config('app.ORBIS_IdService');
@@ -120,7 +120,6 @@ class AdmisionCartController extends Controller
          $secretKey = config('app.ORBIS_SecretKey');
          $date = Carbon::now()->toAtomString();
          $hash = hash('SHA256', $serviceId.'.'.$accessKey.'.'.$secretKey.'.'.$date, false);
-
          $responseAuth = $clientAuth->post(config('app.ORBIS_URL_AUTH'),[
             'headers' => ['Content-Type' => 'application/json'],
             'json' => [
@@ -140,8 +139,8 @@ class AdmisionCartController extends Controller
          return view('partials.view-cip', ['link'=> $enlace]);
          // return redirect()->away($enlace);
       }catch (RequestException $e){
-         $responseAuth = $this->StatusCodeHandling($e);
-         return $responseAuth;
+         //$responseAuth = $this->StatusCodeHandling($e);
+         return $e;
       }
    }
 

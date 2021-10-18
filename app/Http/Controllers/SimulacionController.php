@@ -24,7 +24,7 @@ class SimulacionController extends Controller
                             'cant_conc_mov'=>'1',
                             'mnto_prec_mov'=>'100.00',
                             'mnto_subt_mov'=>'100.00',
-                            'desc_conc_mov'=>'0.00',
+                            'desc_conc_mov'=>'Derecho de Ingreso',
                             'mail_soli_adm'=>config('app.email_soporte'),
                             'codi_proc_adm'=>'0213215',
                             'tipo_docu_sol'=>'0132153',
