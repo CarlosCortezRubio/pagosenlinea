@@ -53,7 +53,7 @@
          <table align="left" style="width: 100%">
             
                <td colspan="5">
-                 {{--   <table id="detalles" width="100%" cellspacing="0" cellpadding="5" style="border-collapse:separate; border: 1px solid #003872; border-radius: 9px; padding: 5px;">
+                  <table id="detalles" width="100%" cellspacing="0" cellpadding="5" style="border-collapse:separate; border: 1px solid #003872; border-radius: 9px; padding: 5px;">
                      <tr>
                         <th colspan="1" width="45px" style="border-bottom: 1px solid black;"><span style="font-size:8px;">Sección</span></th>
                         <th colspan="1" width="50px" style="border-bottom: 1px solid black;"><span style="font-size:8px;">Especialidad</span></th>
@@ -79,9 +79,8 @@
                         <td style="border-top: 1px solid black; text-align: right;"><span style="font-size:8px;">0.00</span></td>
                         <td style="border-top: 1px solid black; text-align: right;"><span style="font-size:8px;">100.00</span></td>
                      </tr>
-                  </table>--}}
+                  </table>
                </td>
-            </tr>
             <tr style="height:5px; line-height:8px;">
                <td colspan="3" style="vertical-align:top; padding-top:15px;">
                      <span style="font-size:6px;">M&eacute;todo de Pago: Dep&oacute;sitos y transferencias</span><br>
