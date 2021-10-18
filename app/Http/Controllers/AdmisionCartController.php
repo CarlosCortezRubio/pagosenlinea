@@ -226,7 +226,7 @@ class AdmisionCartController extends Controller
          $result = json_decode($responseCIP->getBody()->getContents());
 
          // GUARDAR EN LA BD: ESTADO SOLICITUD GENERADA;
-         $solicitud = Solicitud_Admision::where('codi_proc_adm', getCartSignAttribute('codi_proc_adm'))
+         /*$solicitud = Solicitud_Admision::where('codi_proc_adm', getCartSignAttribute('codi_proc_adm'))
             ->where('tipo_docu_sol', getCartSignAttribute('tipo_docu_sol'))
             ->where('nume_docu_sol', getCartSignAttribute('nume_docu_sol'))
             ->first();
@@ -241,7 +241,7 @@ class AdmisionCartController extends Controller
          $pago->codi_oper_mov = $result->data->cip;
          $pago->link_pago_mov = $result->data->cipUrl;
          $pago->update();
-
+*/
          return $result->data->cipUrl;
 
       }catch (RequestException $e){
