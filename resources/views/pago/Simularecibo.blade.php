@@ -1,6 +1,6 @@
 @extends('pago.template')
 @section('header')
-   {{--  <div>
+     <div>
       <div>
          <table id="reportesTabla" align="left" style="width: 100%">
             <tr>
@@ -44,7 +44,7 @@
             </tr>
          </table>
       </div>
-   </div>--}}
+   </div>
 @endsection
 
 @section('content')
