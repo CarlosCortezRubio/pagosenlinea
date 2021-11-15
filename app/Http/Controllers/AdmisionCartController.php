@@ -225,7 +225,7 @@ class AdmisionCartController extends Controller
          ]);
 
          $result = json_decode($responseCIP->getBody()->getContents());
-         if(!session('simulacion')){
+       //  if(!session('simulacion')){
             // GUARDAR EN LA BD: ESTADO SOLICITUD GENERADA;
             $solicitud = Solicitud_Admision::where('codi_proc_adm', getCartSignAttribute('codi_proc_adm'))
                ->where('tipo_docu_sol', getCartSignAttribute('tipo_docu_sol'))
@@ -239,7 +239,7 @@ class AdmisionCartController extends Controller
             $solicitud->fech_expi_pag = Carbon::createFromFormat('Y-m-d H:i:s',$fech_expi);
             $solicitud->update();
             session(['simulacion'=> false]);
-         }
+        // }
          $pago->codi_oper_mov = $result->data->cip;
          $pago->link_pago_mov = $result->data->cipUrl;
          $pago->update();
