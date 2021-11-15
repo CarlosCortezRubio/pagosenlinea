@@ -12,7 +12,7 @@ class SimulacionController extends Controller
     public function enviarReciboIngreso()
     {
        Mail::to(config('app.email_soporte'))->send(new MensajeIngresante(config('app.url').'/ReciboSimulado'));
-       return 'mensaje enviado';
+       return redirect()->back();
     }
 
     public function simularRecibo(){

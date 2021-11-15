@@ -34,13 +34,13 @@
             </tr>
             <tr>
                <td colspan="1"><span style="font-size:8px;">Apellidos y Nombres</span></td>
-               <td colspan="4"><span style="font-size:8px;">: EDUARDO CAHUANA JUAREZ</span></td>
+               <td colspan="4"><span style="font-size:8px;">: CARLOS CORTEZ RUBIO</span></td>
             </tr>
             <tr>
                <td colspan="1"><span style="font-size:8px;">Documento de Identidad</span></td>
-               <td colspan="2"><span style="font-size:8px;">: DNI - 12345678</span></td>
+               <td colspan="2"><span style="font-size:8px;">: DNI - 71563437</span></td>
                <td colspan="1" align="right"><span style="font-size:8px;">Fecha Emisión:</span></td>
-               <td colspan="1"><span style="font-size:8px;">18/10/2021</span></td>
+               <td colspan="1"><span style="font-size:8px;">15/11/2021</span></td>
             </tr>
          </table>
       </div>
@@ -64,7 +64,7 @@
                      </tr>
                     
                         <tr style="vertical-align:top;">
-                           <td><span style="font-size:8px;">OTROS</span></td>
+                           <td><span style="font-size:8px;">ESCOLAR</span></td>
                            <td><span style="font-size:8px;">GUITARRA</span></td>
                            <td><span style="font-size:8px;">DERECHO DE INGRESO</span></td>
                            <td style="text-align: right;"><span style="font-size:8px;">100.00</span></td>
