@@ -48,6 +48,7 @@ class SimulacionController extends Controller
              $cart->put($key, $array_cart);
  
              session(['cartSignOut'=> $cart]);
+             session(['simulacion'=> true]);
  
              return view('pago.signout.index');
        
