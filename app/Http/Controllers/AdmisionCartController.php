@@ -53,6 +53,7 @@ class AdmisionCartController extends Controller
 
          } else {
 
+
             $solicitud = Solicitud_Admision::where('codi_proc_adm', $request->get('p1'))
             ->where('tipo_docu_sol', $request->get('p2'))
             ->where('nume_docu_sol', $request->get('p3'))
