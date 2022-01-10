@@ -54,7 +54,7 @@ class ListenerController extends Controller
                $solicitud->fech_pago_sol = Carbon::now();
                $solicitud->update();
 
-               return $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
+               $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
             }
             
             return response()->json(['message' => 'Successful notification' ], 200);
@@ -102,12 +102,12 @@ class ListenerController extends Controller
          $user->save();
       }
 
-      $enlace = config('app.url_admision');
+      //$enlace = config('app.url_admision');
 
       if($modalidad == 'E'){
-       // $this->enviarMensajeExonerado($email);
+        $this->enviarMensajeExonerado($email);
       } else {
-        $this->enviarMensaje($enlace, $email, $contrasena);
+       // $this->enviarMensaje($enlace, $email, $contrasena);
       }
 	  
       return true;
