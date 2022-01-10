@@ -101,12 +101,12 @@ class ListenerController extends Controller
          $user->save();
       }
 
-      $enlace = config('app.url_admision');
+     // $enlace = config('app.url_admision');
 
       if($modalidad == 'E'){
        // $this->enviarMensajeExonerado($email);
       } else {
-        $this->enviarMensaje($enlace, $email, $contrasena);
+     //   $this->enviarMensaje($enlace, $email, $contrasena);
       }
 	  
       return true;
