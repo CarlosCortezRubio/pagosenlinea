@@ -28,7 +28,7 @@ class ListenerController extends Controller
       $sigExternal = $request->headers->get('PE-Signature');
       $body = $request->all();
       $textBody ='{"eventType":"'.$body['eventType'].'","operationNumber":"'.$body['operationNumber'].'","data":{"cip":"'.$body['data']['cip'].'","currency":"'.$body['data']['currency'].'","amount":'.number_format($body['data']['amount'],2,".","").'}}';
-	  $sig = hash_hmac('sha256', $textBody, $secretKey);
+	   $sig = hash_hmac('sha256', $textBody, $secretKey);
 
       if ($sig == $sigExternal) {
          // $pago = Pago::where('codi_movi_mov', $body['operationNumber'])
@@ -104,7 +104,7 @@ class ListenerController extends Controller
       $enlace = config('app.url_admision');
 
       if($modalidad == 'E'){
-        $this->enviarMensajeExonerado($email);
+       // $this->enviarMensajeExonerado($email);
       } else {
         $this->enviarMensaje($enlace, $email, $contrasena);
       }
