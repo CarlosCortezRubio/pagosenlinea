@@ -80,12 +80,12 @@ class ListenerController extends Controller
                      ->first();
 	
 	  $contrasena = str_random(8);
-     return "llegue aqui";
+     
       if ($usuario) {
 		 // Actualiza datos
-		 $user->password = Hash::make($contrasena);
-		 $user->email    = $email;
-		 $user->update();
+		 $usuario->password = Hash::make($contrasena);
+		 $usuario->email    = $email;
+		 $usuario->update();
 		 
          //$contrasena = 'user_exists';
          //$email = $usuario->email;
