@@ -73,14 +73,14 @@ class ListenerController extends Controller
 
    public function generarCredenciales($email, $tipodocu, $numedocu, $modalidad)
    {
-      return "llegue aqui";
+     
       // Valida si ya existe una cuenta de usuario
       $usuario = User::where('tdocumento', $tipodocu)
                      ->where('ndocumento', $numedocu)
                      ->first();
 	
 	  $contrasena = str_random(8);
-	  
+     return "llegue aqui";
       if ($usuario) {
 		 // Actualiza datos
 		 $user->password = Hash::make($contrasena);
