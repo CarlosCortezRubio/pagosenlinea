@@ -54,7 +54,7 @@ class ListenerController extends Controller
                $solicitud->fech_pago_sol = Carbon::now();
                $solicitud->update();
 
-               $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
+               return $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
             }
             
             return response()->json(['message' => 'Successful notification' ], 200);
@@ -73,6 +73,7 @@ class ListenerController extends Controller
 
    public function generarCredenciales($email, $tipodocu, $numedocu, $modalidad)
    {
+      return "llegue aqui";
       // Valida si ya existe una cuenta de usuario
       $usuario = User::where('tdocumento', $tipodocu)
                      ->where('ndocumento', $numedocu)
@@ -104,7 +105,7 @@ class ListenerController extends Controller
      // $enlace = config('app.url_admision');
 
       if($modalidad == 'E'){
-       // $this->enviarMensajeExonerado($email);
+        $this->enviarMensajeExonerado($email);
       } else {
      //   $this->enviarMensaje($enlace, $email, $contrasena);
       }
