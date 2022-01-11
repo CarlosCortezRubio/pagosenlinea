@@ -102,7 +102,7 @@ class ListenerController extends Controller
          $user->save();
       }
 
-      $enlace = 'https://academica360-beta.unm.edu.pe/Admisionin';//config('app.url_admision');
+      $enlace = 'http://admision.unm.edu.pe/login';//config('app.url_admision');
 
       if($modalidad == 'E'){
         $this->enviarMensajeExonerado($email);
