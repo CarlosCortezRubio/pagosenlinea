@@ -54,6 +54,12 @@ class ReciboController extends Controller
 				//$alumno->repr_apod_per=$postulante->apel_nomb_apd;
 				//$alumno->foto_pers_per=$postulante->foto_post_per;
 				$alumno->save();
+			}else{
+				$persona->flag_alum_per='S';
+				$persona->flag_acti_per='S';
+				$persona->tipo_pers_per='N';
+				$persona->mail_pers_per=$postulante->mail_soli_sol;
+				$persona->update();
 			}
 			
 		} else {
