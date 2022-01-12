@@ -57,6 +57,7 @@ class ListenerController extends Controller
                            ->where("codi_proc_adm",$proceso)->first();
             if ($solicitud) { 
                //2022
+               return $postulacion->codi_post_pos;
                $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos);
                if ($reciboesponse['error']) {
                   return response()->json(['error' => $reciboesponse['error']], 400);
