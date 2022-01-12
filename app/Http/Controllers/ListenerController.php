@@ -60,11 +60,11 @@ class ListenerController extends Controller
                //2022
                Log::info(var_dump($postulacion));
                //return $postulacion->codi_post_pos;
-               $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos);
-               if ($reciboesponse['error']) {
-                  return response()->json(['error' => $reciboesponse['error']], 400);
-               }else {
+               $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos)->getStatusCode();
+               if ($reciboesponse=="200") {
                   $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
+               }else {
+                  return response()->json(['error' => 'Invalid data'], 400);
                }
                //
                $solicitud->esta_pago_sol = 'P';
