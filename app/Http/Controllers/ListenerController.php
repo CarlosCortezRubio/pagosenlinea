@@ -15,6 +15,7 @@ use App\Mail\MensajeRecibo;
 use Carbon\Carbon;
 use App\Http\Controllers\ReciboController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 // use hash_hmac;
 
@@ -57,7 +58,8 @@ class ListenerController extends Controller
                            ->where("codi_proc_adm",$proceso)->first();
             if ($solicitud) { 
                //2022
-               return $postulacion->codi_post_pos;
+               Log::info(var_dump($postulacion));
+               //return $postulacion->codi_post_pos;
                $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos);
                if ($reciboesponse['error']) {
                   return response()->json(['error' => $reciboesponse['error']], 400);
