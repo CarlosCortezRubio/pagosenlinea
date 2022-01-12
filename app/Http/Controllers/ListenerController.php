@@ -61,6 +61,7 @@ class ListenerController extends Controller
                Log::info($postulacion->codi_post_pos);
                //return $postulacion->codi_post_pos;
                $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos)->getStatusCode();
+               return $reciboesponse;
                if ($reciboesponse=="200") {
                   $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
                }else {
@@ -148,7 +149,7 @@ class ListenerController extends Controller
       $controller = new ReciboController();
            
       $response = $controller->reciboPostulante($param1);
-      
+      return $response;
       if($response['ok']){
          $enlace = URL::SignedRoute('viewPDF', ['p1' => $response['corr'], 'p2' => $response['sede']]);
          $this->enviarRecibo($enlace, $response['email']);

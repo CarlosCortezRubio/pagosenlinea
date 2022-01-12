@@ -64,7 +64,7 @@ class ExternalController extends Controller
                   'data' => $data
                ]
    			]);
-
+			dd($responseAuth);die;
    			$status = $responseAuth->getStatusCode();
             if($status=="200") {
    				return redirect()->route('external.simularPago')
