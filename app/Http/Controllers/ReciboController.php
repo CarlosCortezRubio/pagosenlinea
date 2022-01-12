@@ -82,9 +82,9 @@ class ReciboController extends Controller
 		$persona = Persona::Where('tipo_docu_per', $pagoCab->tipo_docu_mov)
 							->where('nume_docu_per', $pagoCab->nume_docu_mov)
 							->first();
-		Log::info($pagoCab->toArray());
-		Log::info($pagoDet->toArray());
-		Log::info($persona->toArray());
+		//Log::info($pagoCab->toArray());
+		//Log::info($pagoDet->toArray());
+		//Log::info($persona->toArray());
 
 		$codi_pers = $persona->codi_pers_per;
 		$email = $persona->mail_pers_per;
