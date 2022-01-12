@@ -11,6 +11,7 @@ use App\Models\ReciboPago;
 use App\Models\ReciboPagoDet;
 use Carbon\Carbon;
 use DB;
+use Illuminate\Support\Facades\Log;
 use PDF;
 
 class ReciboController extends Controller
@@ -164,6 +165,7 @@ class ReciboController extends Controller
       catch(\Exception $e)
       {
          DB::rollback();
+		 Log::error($e->getMessage());
          return ['ok' => false, 'error' => $e];
       }
 	}
