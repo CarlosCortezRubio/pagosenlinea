@@ -52,7 +52,7 @@ class ListenerController extends Controller
                ->where('nume_docu_sol', $pago->nume_docu_mov)
             ->where('codi_proc_adm', $proceso)
                ->first();
-               $postulacion = DB::table("sigunm.ad_postulacion")
+               $postulacion = DB::table("bdsigunm.ad_postulacion")
                            ->where("tipo_docu_per",$pago->tipo_docu_mov)
                            ->where("nume_docu_per",$pago->nume_docu_mov)
                            ->where("codi_proc_adm",$proceso)->first();
