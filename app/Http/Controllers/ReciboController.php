@@ -165,8 +165,8 @@ class ReciboController extends Controller
       catch(\Exception $e)
       {
          DB::rollback();
-		 Log::error($e->getMessage());
-         return ['ok' => false, 'error' => $e];
+		 dd($e);
+         //return ['ok' => false, 'error' => $e];
       }
 	}
 	
