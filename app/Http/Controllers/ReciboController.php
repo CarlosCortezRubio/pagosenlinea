@@ -135,6 +135,8 @@ class ReciboController extends Controller
 			$correlativo->save();
 			// Detalle
 			$secu = 0;
+			Log::info("llegue aqui");
+
 			foreach ($pagoDet as $det) {
 				$secu++;
 				$reciboDet = new ReciboPagoDet;
@@ -148,7 +150,7 @@ class ReciboController extends Controller
 				$reciboDet->codi_secc_cex = $det->codi_secc_sec;
 				$reciboDet->codi_clas_ppt = '001281'; //solo para pruebas
 				$reciboDet->mnto_subt_pag = $det->mnto_subt_mov;
-				$mora = (is_null($det->mnto_mult_mov) || empty($det->mnto_mult_mov) || strlen($det->mnto_mult_mov) < 1 ? 0 : $det->mnto_mult_mov);
+				$mora = 0;//(is_null($det->mnto_mult_mov) || empty($det->mnto_mult_mov) || strlen($det->mnto_mult_mov) < 1 ? 0 : $det->mnto_mult_mov);
 				$reciboDet->mnto_mora_pag = $mora;
 				$reciboDet->mnto_tota_pag = $det->mnto_subt_mov + $mora;
 				$reciboDet->orig_conc_pag = 'MA';
