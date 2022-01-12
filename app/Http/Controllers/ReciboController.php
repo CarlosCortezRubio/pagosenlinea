@@ -82,6 +82,10 @@ class ReciboController extends Controller
 		$persona = Persona::Where('tipo_docu_per', $pagoCab->tipo_docu_mov)
 							->where('nume_docu_per', $pagoCab->nume_docu_mov)
 							->first();
+		Log::info(implode(",",$pagoCab));
+		Log::info(implode(",",$pagoDet));
+		Log::info(implode(",",$persona));
+		
 		$codi_pers = $persona->codi_pers_per;
 		$email = $persona->mail_pers_per;
 		$sede = '004';
@@ -165,7 +169,7 @@ class ReciboController extends Controller
       catch(\Exception $e)
       {
          DB::rollback();
-		 return $e;
+		 Log::error($e->getMessage());
          return ['ok' => false, 'error' => $e];
       }
 	}
