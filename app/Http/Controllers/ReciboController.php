@@ -103,15 +103,15 @@ class ReciboController extends Controller
 			if($correlativo){
 				$nume_corr = $correlativo->corr_actu_cdo;
 			} else {
-				$newCorre = new CorrelativoDocumento;
-				$newCorre->tipo_corr_cdo = 'REC';
-				$newCorre->codi_sede_tse = $sede;
-				$newCorre->anio_corr_cdo = Carbon::now()->format('Y');
-				$newCorre->nmes_corr_cdo = '99';
-				$newCorre->fech_regi_aud = Carbon::now();
+				$correlativo = new CorrelativoDocumento;
+				$correlativo->tipo_corr_cdo = 'REC';
+				$correlativo->codi_sede_tse = $sede;
+				$correlativo->anio_corr_cdo = Carbon::now()->format('Y');
+				$correlativo->nmes_corr_cdo = '99';
+				$correlativo->fech_regi_aud = Carbon::now();
 				// $newCorre->user_regi_aud=;
-				$newCorre->term_regi_aud = request()->getClientIp();
-				$newCorre->save();
+				$correlativo->term_regi_aud = request()->getClientIp();
+				
 
 				$nume_corr = 0;
 			}
@@ -132,7 +132,7 @@ class ReciboController extends Controller
 			$recibo->save();
 			// Correlativo 
 			//
-			Log::info($nume_corr);
+
 			$correlativo->corr_actu_cdo = $nume_corr;
 			$correlativo->save();
 			Log::info("llegue aqui");
