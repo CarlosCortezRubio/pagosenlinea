@@ -45,13 +45,13 @@ class ReciboController extends Controller
 				$alumno->flag_acti_per='S';
 				$alumno->fech_naci_per=$postulante->fech_naci_per;
 				$alumno->tipo_pers_per='N';
-				$alumno->ubig_domi_per=substr($postulante->ubig_domi_per,0,6);
-				$alumno->telf_domi_per=$postulante->telf_fijo_per;
-				$alumno->telf_emer_per=$postulante->telf_celu_per;
+				//$alumno->ubig_domi_per=substr($postulante->ubig_domi_per,0,6);
+				//$alumno->telf_domi_per=$postulante->telf_fijo_per;
+				//$alumno->telf_emer_per=$postulante->telf_celu_per;
 				$alumno->mail_pers_per=$postulante->mail_soli_sol;
-				$alumno->ndni_reap_per=$postulante->nume_docu_apd;
-				$alumno->repr_apod_per=$postulante->apel_nomb_apd;
-				$alumno->foto_pers_per=$postulante->foto_post_per;
+				//$alumno->ndni_reap_per=$postulante->nume_docu_apd;
+				//$alumno->repr_apod_per=$postulante->apel_nomb_apd;
+				//$alumno->foto_pers_per=$postulante->foto_post_per;
 				$alumno->save();
 			}
 			
