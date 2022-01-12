@@ -58,13 +58,13 @@ class ListenerController extends Controller
                            ->where("codi_proc_adm",$proceso)->first();
             if ($solicitud) { 
                //2022
-               Log::info(var_dump($postulacion));
+               Log::info($postulacion->codi_post_pos);
                //return $postulacion->codi_post_pos;
                $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos)->getStatusCode();
                if ($reciboesponse=="200") {
                   $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
                }else {
-                  return response()->json(['error' => 'Invalid data'], 400);
+                  return response()->json(['error' => 'Invalid data'], $reciboesponse);
                }
                //
                $solicitud->esta_pago_sol = 'P';
