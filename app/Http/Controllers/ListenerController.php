@@ -44,17 +44,25 @@ class ListenerController extends Controller
 
             $proceso = '00002'; //proceso vigente
 			
-			$solicitud = Solicitud_Admision::where('codi_oper_sol', $body['data']['cip'])
-            ->where('tipo_docu_sol', $pago->tipo_docu_mov)
-            ->where('nume_docu_sol', $pago->nume_docu_mov)
-			->where('codi_proc_adm', $proceso)
-            ->first();
+            $solicitud = Solicitud_Admision::where('codi_oper_sol', $body['data']['cip'])
+               ->where('tipo_docu_sol', $pago->tipo_docu_mov)
+               ->where('nume_docu_sol', $pago->nume_docu_mov)
+            ->where('codi_proc_adm', $proceso)
+               ->first();
             if ($solicitud) { 
+               //2022
+               $reciboesponse=$this->apiRestRecibo($request);
+               //
+               if ($reciboesponse['error']) {
+                  return response()->json(['error' => $reciboesponse['error']], 400);
+               }else {
+                  $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
+               }
+               //
                $solicitud->esta_pago_sol = 'P';
                $solicitud->fech_pago_sol = Carbon::now();
                $solicitud->update();
-
-               $this->generarCredenciales($solicitud->mail_soli_sol, $solicitud->tipo_docu_sol, $solicitud->nume_docu_sol, $solicitud->codi_moda_mod);
+               
             }
             
             return response()->json(['message' => 'Successful notification' ], 200);
