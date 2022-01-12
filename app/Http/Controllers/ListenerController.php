@@ -13,7 +13,9 @@ use App\Mail\MensajeCredenciales;
 use App\Mail\MensajeExonerado;
 use App\Mail\MensajeRecibo;
 use Carbon\Carbon;
-use App\Http\Controllers\ReciboController; 
+use App\Http\Controllers\ReciboController;
+use Illuminate\Support\Facades\DB;
+
 // use hash_hmac;
 
 class ListenerController extends Controller
@@ -42,17 +44,20 @@ class ListenerController extends Controller
             $pago->codi_pago_mov = $body['operationNumber'];
             $pago->update();
 
-            $proceso = '00002'; //proceso vigente
+            $proceso = DB::table("ad_proceso")->where("esta_proc_adm",'V')->first()->codi_proc_adm; //proceso vigente
 			
             $solicitud = Solicitud_Admision::where('codi_oper_sol', $body['data']['cip'])
                ->where('tipo_docu_sol', $pago->tipo_docu_mov)
                ->where('nume_docu_sol', $pago->nume_docu_mov)
             ->where('codi_proc_adm', $proceso)
                ->first();
+               $postulacion = DB::table("sigunm.ad_postulacion")
+                           ->where("tipo_docu_per",$pago->tipo_docu_mov)
+                           ->where("nume_docu_per",$pago->nume_docu_mov)
+                           ->where("codi_proc_adm",$proceso)->first();
             if ($solicitud) { 
                //2022
-               $reciboesponse=$this->apiRestRecibo($request);
-               //
+               $reciboesponse=$this->apiRestRecibo($postulacion->codi_post_pos);
                if ($reciboesponse['error']) {
                   return response()->json(['error' => $reciboesponse['error']], 400);
                }else {
@@ -134,9 +139,9 @@ class ListenerController extends Controller
       return 'mensaje enviado';
    }
 
-   public function apiRestRecibo(Request $request)
+   public function apiRestRecibo($codi_post_pos)//Request $request)
    {
-      $param1 = $request->get('param1');
+      $param1 = $codi_post_pos;//$request->get('param1');
       $controller = new ReciboController();
            
       $response = $controller->reciboPostulante($param1);
