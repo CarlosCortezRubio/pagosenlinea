@@ -131,11 +131,12 @@ class ReciboController extends Controller
 			$recibo->fech_regi_pag = Carbon::now();
 			$recibo->save();
 			// Correlativo 
+			Log::info("llegue aqui");
+
 			$correlativo->corr_actu_cdo = $nume_corr;
 			$correlativo->save();
 			// Detalle
 			$secu = 0;
-			Log::info("llegue aqui");
 
 			foreach ($pagoDet as $det) {
 				$secu++;
